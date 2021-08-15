@@ -1,9 +1,6 @@
-Personal Homepage and Resume
+Personal Homepage
 ================================
 
-My online homepage, please visit https://noalac.github.io
+My online homepage and resume, please visit https://jingdsun.github.io
 
-Changelog
-================================
-* 2018-09-18. Updated version in Sept. 2018
-* 2021-08-14. Enable Github Page.
+
