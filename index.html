@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-	<meta name="google-site-verification" content="4IjU_40R0Ayadfm1De6pqgJMGRT7H_QuLnkKMhngQz0" />	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta name="google-site-verification" content="gA7lDy31qIxYs2e21mEgq5RiQmFE81eZMLZ4dfeKQyo" />	
 	<meta name="description" content="Welcome to Jingdong Sun's Homepage">
 	<title>Jingdong's Homepage</title>
 	<link rel='stylesheet' href='./bootstrap/css/style.css' type='text/css'>
     <!--[if lte IE 8]>
     <link rel='stylesheet' href='./css/style-ie.css' type='text/css'>
     <![endif]-->
-
 	<link rel="stylesheet" href="./bootstrap/leaflet/leaflet.css"/>
 	<!-- make sure you put this AFTER Leaflet's CSS -->
 	<script src="./bootstrap/leaflet/leaflet.js"></script>
@@ -18,9 +17,7 @@
 </head>
 
 <body>
-	<div id="top-banner" class="banner">
-		<!-- <img style="position:absolute;left:450px;" src="./img/title-logo.png"> -->
-	</div>
+	<div id="top-banner" class="banner"></div>
 	<div id="main-body" class="wrapper">
 		<div id="site-title">
 			<div id="name">JINGDONG SUN
@@ -28,12 +25,20 @@
 			</div>
 			<div id="access">
 				<ul id="nav">
-					<li><a id="link-contact" href="#contact" onclick="changeNavState(id)">CONTACT</a></li>
-					<li><a id="link-projects" href="#projects" onclick="changeNavState(id)">PROJECTS</a></li>
-					<li><a id="link-research" href="#research" onclick="changeNavState(id)">RESEARCH</a></li>
-					<li><a id="link-about" href="#about" onclick="changeNavState(id)">ABOUT</a></li>
 					<li><a id="link-home" href="#home" onclick="changeNavState(id)">HOME</a></li>
+					<li><a id="link-about" href="#about" onclick="changeNavState(id)">ABOUT</a></li>
+					<li><a id="link-research" href="#research" onclick="changeNavState(id)">RESEARCH</a></li>
+					<li><a id="link-projects" href="#projects" onclick="changeNavState(id)">PROJECTS</a></li>
+					<li><a id="link-contact" href="#contact" onclick="changeNavState(id)">CONTACT</a></li>
 				</ul>
+				<select id="sel" onchange="javascript:if(this.value){location.href=this.value}">
+					<option value="" selected="selected">MENU</option>
+					<option value="#home">HOME</option>
+					<option value="#about">ABOUT</option>
+					<option value="#research">RESEARCH</option>
+					<option value="#projects">PROJECTS</option>
+					<option value="#contact">CONTACT</option>
+				</select>				
 			</div>
 		</div>
 		<div id="content">
@@ -57,50 +62,76 @@
 					<img src="./bootstrap/img/gallery-photo4.jpg">
 				</span>
 				<!-- two arrows switching photos -->
-				<span id="arrows-left" onclick="window.clearInterval(timer); changePhotoLeft();timer = window.setInterval(changePhotoLeft,4000);">
+				<span id="arrows-left" class="gallery-arrow" onclick="window.clearInterval(timer); changePhotoLeft();timer = window.setInterval(changePhotoLeft,4000);">
 					<img src="./bootstrap/img/arrows-left.png">
 				</span>
-				<span id="arrows-right" onclick="window.clearInterval(timer); changePhotoRight();timer = window.setInterval(changePhotoRight,4000);">
+				<span id="arrows-right" class="gallery-arrow" onclick="window.clearInterval(timer); changePhotoRight();timer = window.setInterval(changePhotoRight,4000);">
 					<img src="./bootstrap/img/arrows-right.png">
 				</span>
 			</div> <!-- gallery-background -->
 			<div id="gallery-text" class="gallery-content">
-				<h1>Welcome to My Homepage</h1>
-				<div id="gallery-description">
-					<p id="gallery-description-showing">Here is a collection of my work, including the research and projects</p>
+				<div id="gallery-description" class="container-text">
+					<p id="gallery-description-showing">Welcome to My Homepage</p>
 					<p id="gallery-description-hidden"></p>
 				</div>
 			</div> <!-- gallery-text -->
 		</div> <!-- home-gallery -->
 
-		<div>
-			<img src="./bootstrap/img/gallery-bottom.png" style="width:940px;height:40px;margin-bottom:24px;">
+		<div id="gallery-bottom">
+			<img src="./bootstrap/img/gallery-bottom.png">
 		</div>
 
 		<div class="container-outside">
-			<div id="quick-link" class="container-block">
+        	<div class="container-block">
+				<h1>News</h1>
+				<div id="news" class="container-description">
+					<div class="container-text">
+						<ul>
+							<li><b>08/2021</b> Our R35 Maximizing Investigators' Research Award proposal was funded by the National Institute of General Medical Sciences! The grant will support our work on multi-scale analysis of single-cell transcriptomes. (<a href="https://www.newswise.com/articles/faculty-receives-national-institutes-of-health-grant-to-further-single-cell-rna-sequencing-analysis" target="_blank">Learn more</a>) </li>
+							<li><b>07/2021</b> New Paper! Our manuscript, Selecting gene features for unsupervised analysis of single-cell gene expression data, was accepted by Briefings in Bioinformatics! Congratulations to Jie!</li>
+							<li><b>07/2021</b> Our R21 grant proposal in collaboration with Dr. Zhiping Pang at Rutgers was funded by the National Institute of Mental Health!</li>
+							<li><b>06/2021</b> New paper! Our manuscript in collaboration with Dr. Tian at the Wistar Institute, MAAPER: model-based analysis of alternative polyadenylation using 3'end-linked reads, was accepted by Genome Biology!</li>
+							<li><b>05/2021</b> A visiting student in the lab, Shiwei Fu, has received the Rutgers Presidential Fellowship and will join our lab as a PhD student this fall. Congratulations to Shiwei!</li>
+						</ul>
+						<details>
+						<summary>Click to see all.</summary>
+						<ul>
+							<li><b>03/2021</b> New preprint! Our manuscript about analyzing alternative polyadenylation using using 3’ end-linked reads, is now available on <a href="https://www.biorxiv.org/content/10.1101/2021.03.21.436343v1" target="_blank">bioRxiv</a>.</li>
+							<li><b>01/2021</b> New paper! Our manuscript, scLink: inferring sparse gene co-expression networks from single-cell expression data, was accepted by Genomics, Proteomics & Bioinformatics. Congratulations to Yanzeng!</li>
+							<li><b>09/2020</b> New preprint! Our manuscript about constructing gene co-expression networks in single cells is now available on <a href="https://www.biorxiv.org/content/10.1101/2020.09.19.304956v1" target="_blank">bioRxiv</a>.</li>
+							<li><b>09/2020</b> Vivian received the Busch Biomedical Grant Award.</li>
+							<li><b>06/2020</b> Vivian received the BERD Method Grant from New Jersey Alliance for Clinical and Translational Science (<a href="https://njacts.rbhs.rutgers.edu/" target="_blank">NJ ACTS</a>).</li>
+						</ul>
+						</details>
+					</div> <!-- container-text -->
+				</div> <!-- container-description -->
+			</div> <!-- container-block -->
+
+			<div class="container-block">
 				<h1>Quick Links</h1>
-				<div class="container-description">
-					<div class="container-desc-col-4">
-						<a href="http://english.hust.edu.cn" target="_blank">
-							<span><img src="./bootstrap/img/hust-logo.png"></span>
-						</a>
-					</div>
-					<div class="container-desc-col-4">
-						<a href="https://www.mst.edu" target="_blank">
-							<span><img src="./bootstrap/img/mst-logo.png"></span>
-						</a>
-					</div>
-					<div class="container-desc-col-4">
-						<a href="https://github.com/noalac" target="_blank">
-							<span><img src="./bootstrap/img/github-logo.png"></span>
-						</a>
-					</div>
-					<div class="container-desc-col-4">
-						<a href="https://scholar.google.com/citations?user=YDF6-IUAAAAJ&hl=en" target="_blank">
-							<span><img src="./bootstrap/img/google-scholar-logo.png"></span>
-						</a>
-					</div>
+				<div id="quick-link" class="container-description">
+					<div class="container-text">
+						<div class="container-desc-col-4">
+							<a href="http://english.hust.edu.cn" target="_blank">
+								<span><img src="./bootstrap/img/hust-logo.png"></span>
+							</a>
+						</div>
+						<div class="container-desc-col-4">
+							<a href="https://www.mst.edu" target="_blank">
+								<span><img src="./bootstrap/img/mst-logo.png"></span>
+							</a>
+						</div>
+						<div class="container-desc-col-4">
+							<a href="https://github.com/noalac" target="_blank">
+								<span><img src="./bootstrap/img/github-logo.png"></span>
+							</a>
+						</div>
+						<div class="container-desc-col-4">
+							<a href="https://scholar.google.com/citations?user=YDF6-IUAAAAJ&hl=en" target="_blank">
+								<span><img src="./bootstrap/img/google-scholar-logo.png"></span>
+							</a>
+						</div>
+					</div> <!-- container-text -->
 				</div> <!-- container-description -->
 			</div> <!-- container-block -->
 		</div> <!-- container-outside -->
@@ -110,36 +141,37 @@
 	<script id="research-content" type="text/x-content">
 		<div class="container-outside">
 			<div class="container-block">
-				<h1>Publications</h1>
+				<h1>Publication</h1>
 				<div class="container-description">
-					<ul>
-						<li>
-							<i>Jingdong Sun</i>, Jonghyun Cho, Anfeng Huang, Hongseok Kim and Jun Fan, "Accurate Rectifier Characterization and Improved Modeling of Constant Power Load Wireless Power Transfer Systems," in <b>IEEE Transactions on Power Electronics</b>, vol. 35, no. 8, pp. 7840-7852, Aug. 2020.
-							<p>[ <a href="https://ieeexplore.ieee.org/document/8937500" target="_blank">Link</a> ]</p>
-						</li>
-						<li>
-							<i>Jingdong Sun</i>, Hanfeng Wang, Ken Wu and Jun Fan, "A Pattern-Based Analytical Method for Impedance Calculation of the Power Distribution Network in Mobile Platforms," in <b>IEEE Transactions on Electromagnetic Compatibility</b>, vol. 63, no. 3, pp. 912-921, June 2021.
-							<p>[ <a href="https://ieeexplore.ieee.org/document/9212604" target="_blank">Link</a> ]</p>
-						</li>
-						<li>
-							<i>Jingdong Sun</i>, Yimajian Yan, Hanfeng Wang, Emil Chen and Jun Fan, "Topology-based Accurate Modeling of Current-Mode Voltage Regulator Modules for Power Distribution Network Design," in <b>IEEE Transactions on Electromagnetic Compatibility</b>, under review (minor revision).
-						</li>
-						<li>
-							<i>Jingdong Sun</i>, Jonghyun Cho and Jun Fan, "Sequential Design Methodology on System Parameters for Location Freedom Wireless Power Transfer Systems," in <b>IEEE Transactions on Microwave Theory and Techniques</b>. To be submitted.
-						</li>						
-						<li>
-							Nicholas Erickson, <i>Jingdong Sun</i>, Gyucheol Han, Tun Li, Siming Pan, Huilin Wu and Jun Fan, "Ferrite Sheet Characterization Using a Planar PCB Coil for Wireless Power Transfer Applications," in <b>IEEE Transactions on Magnetics</b>. To be submitted.
-						</li>						
-						<li>
-							Guangyao Shen, Sen Yang, <i>Jingdong Sun</i>, Shuai Xu, David J. Pommerenke and Victor V. Khilkevich, "Maximum Radiated Emissions Evaluation for the Heatsink/IC Structure Using the Measured Near Electrical Field," in <b>IEEE Transactions on Electromagnetic Compatibility</b>, vol. 59, no. 5, pp. 1408-1414, Oct. 2017.
-							<p>[ <a href="https://ieeexplore.ieee.org/abstract/document/7893707" target="_blank">Link</a> ]</p>
-						</li>
-						<li>
-							Chen Tian, <i>Jingdong Sun</i>, Weimin Wu and Yan Luo, "Optimal bandwidth allocation for hybrid Video-on-Demand streaming with a distributed max flow algorithm," in <b>Computer Networks</b>, vol. 91, pp. 483-494, Nov. 2014.
-							<p>[ <a href="https://www.sciencedirect.com/science/article/pii/S1389128615003114" target="_blank">Link</a> ]</p>
-						</li>
-					</ul>
-					<details>
+					<div class="container-text">
+						<ul>
+							<li>
+								<i>Jingdong Sun</i>, Jonghyun Cho, Anfeng Huang, Hongseok Kim and Jun Fan, "Accurate Rectifier Characterization and Improved Modeling of Constant Power Load Wireless Power Transfer Systems," in <b>IEEE Transactions on Power Electronics</b>, vol. 35, no. 8, pp. 7840-7852, Aug. 2020.
+								<p>[ <a href="https://ieeexplore.ieee.org/document/8937500" target="_blank">Link</a> ]</p>
+							</li>
+							<li>
+								<i>Jingdong Sun</i>, Hanfeng Wang, Ken Wu and Jun Fan, "A Pattern-Based Analytical Method for Impedance Calculation of the Power Distribution Network in Mobile Platforms," in <b>IEEE Transactions on Electromagnetic Compatibility</b>, vol. 63, no. 3, pp. 912-921, June 2021.
+								<p>[ <a href="https://ieeexplore.ieee.org/document/9212604" target="_blank">Link</a> ]</p>
+							</li>
+							<li>
+								<i>Jingdong Sun</i>, Yimajian Yan, Hanfeng Wang, Emil Chen and Jun Fan, "Topology-based Accurate Modeling of Current-Mode Voltage Regulator Modules for Power Distribution Network Design," in <b>IEEE Transactions on Electromagnetic Compatibility</b>, under review (minor revision).
+							</li>
+							<li>
+								<i>Jingdong Sun</i>, Jonghyun Cho and Jun Fan, "Sequential Design Methodology on System Parameters for Location Freedom Wireless Power Transfer Systems," in <b>IEEE Transactions on Microwave Theory and Techniques</b>. To be submitted.
+							</li>						
+							<li>
+								Nicholas Erickson, <i>Jingdong Sun</i>, Gyucheol Han, Tun Li, Siming Pan, Huilin Wu and Jun Fan, "Ferrite Sheet Characterization Using a Planar PCB Coil for Wireless Power Transfer Applications," in <b>IEEE Transactions on Magnetics</b>. To be submitted.
+							</li>						
+							<li>
+								Guangyao Shen, Sen Yang, <i>Jingdong Sun</i>, Shuai Xu, David J. Pommerenke and Victor V. Khilkevich, "Maximum Radiated Emissions Evaluation for the Heatsink/IC Structure Using the Measured Near Electrical Field," in <b>IEEE Transactions on Electromagnetic Compatibility</b>, vol. 59, no. 5, pp. 1408-1414, Oct. 2017.
+								<p>[ <a href="https://ieeexplore.ieee.org/abstract/document/7893707" target="_blank">Link</a> ]</p>
+							</li>
+							<li>
+								Chen Tian, <i>Jingdong Sun</i>, Weimin Wu and Yan Luo, "Optimal bandwidth allocation for hybrid Video-on-Demand streaming with a distributed max flow algorithm," in <b>Computer Networks</b>, vol. 91, pp. 483-494, Nov. 2014.
+								<p>[ <a href="https://www.sciencedirect.com/science/article/pii/S1389128615003114" target="_blank">Link</a> ]</p>
+							</li>
+						</ul>
+						<details>
 						<summary>Click to see the full list of publications.</summary>
 						<ul>
 							<li>
@@ -175,20 +207,23 @@
 								<p>[ <a href="https://ieeexplore.ieee.org/abstract/document/7307040/" target="_blank">Link</a> ]</p>
 							</li>
 						</ul>						
-					</details>					
+						</details>		
+					</div> <!-- container-text -->
 				</div> <!-- container-description -->
 			</div> <!-- container-block -->
 
 			<div class="container-block">
 				<h1>US Patents</h1>
 				<div class="container-description">
-					<ul>
-						<li>US20190052103A1: Multi-coil placement method for power transmitter in wireless charging system</li>
-						<li>US20190004125A1: Method and system for evaluating magnetic field uniformity of magnetic coil</li>
-						<li>US20180277298A1: Sparse-routed magnetic coils for wireless power charging system</li>
-						<li>US20180269718A1: Wireless power transfer systems and methods using non-resonant power receiver</li>
-						<li>US20180241248A1: Combined voltage and frequency tuning for efficiency optimization</li>
-					</ul>
+					<div class="container-text">
+						<ul>
+							<li>US20190052103A1: Multi-coil placement method for power transmitter in wireless charging system</li>
+							<li>US20190004125A1: Method and system for evaluating magnetic field uniformity of magnetic coil</li>
+							<li>US20180277298A1: Sparse-routed magnetic coils for wireless power charging system</li>
+							<li>US20180269718A1: Wireless power transfer systems and methods using non-resonant power receiver</li>
+							<li>US20180241248A1: Combined voltage and frequency tuning for efficiency optimization</li>
+						</ul>
+					</div> <!-- container-text -->
 				</div> <!-- container-description -->
 			</div> <!-- container-block -->
 
@@ -196,40 +231,37 @@
 			<div class="container-block">
 				<h1>Presentations</h1>
 				<div class="container-description">
-					<ul>
-						<li>Talk. "A Pattern Based Analytical Method for Impedance Calculation of the PDN in Mobile Platforms". Center for Electromagnetic Compatibility (CEMC) IAB Meeting. Honolulu, Hawaii. Nov. 2019. 
-						<!-- <p>[ <a>Download</a> ]</p></li> -->
-						<li>Talk. "Study and Simulation of HPM Effects on Semiconductor Device using Monte Carlo Method". Center for Electromagnetic Compatibility (CEMC) IAB Meeting. Rolla, Missouri. Nov. 2016. 
-						<!-- <p>[ <a>Download</a> ]</p></li> -->
-						<li>Poster. "Accurate Rectifier Characterization and Improved Modeling of WPT Systems". Center for Electromagnetic Compatibility (CEMC) IAB Meeting. Honolulu, Hawaii. Nov. 2019. 
-						<!-- <p>[ <a>Download</a> ]</p></li> -->
-						<li>Poster. "Post-Design Methodology for Constant Power Load WPT Systems". Center for Electromagnetic Compatibility (CEMC) IAB Meeting. Honolulu, Hawaii. Nov. 2019. 
-						<!-- <p>[ <a>Download</a> ]</p></li> -->
-						<li>Poster. "Accurate Modeling of PMIC Devices to Optimize Low Frequency Voltage Droop". Center for Electromagnetic Compatibility (CEMC) IAB Meeting. Honolulu, Hawaii. Nov. 2019. 
-						<!-- <p>[ <a>Download</a> ]</p></li> -->
-						<li>Poster. "Designing a 40GHz Automated Channel Emulator Based on MEMS Switch". Center for Electromagnetic Compatibility (CEMC) IAB Meeting. Rolla, Missouri. Nov. 2014. 
-						<!-- <p>[ <a>Download</a> ]</p></li> -->
-					</ul>
+					<div class="container-text">
+						<ul>
+							<li>Talk. "A Pattern Based Analytical Method for Impedance Calculation of the PDN in Mobile Platforms". Center for Electromagnetic Compatibility (CEMC) IAB Meeting. Honolulu, Hawaii. Nov. 2019. 
+							<!-- <p>[ <a>Download</a> ]</p></li> -->
+							<li>Talk. "Study and Simulation of HPM Effects on Semiconductor Device using Monte Carlo Method". Center for Electromagnetic Compatibility (CEMC) IAB Meeting. Rolla, Missouri. Nov. 2016. 
+							<!-- <p>[ <a>Download</a> ]</p></li> -->
+							<li>Poster. "Accurate Rectifier Characterization and Improved Modeling of WPT Systems". Center for Electromagnetic Compatibility (CEMC) IAB Meeting. Honolulu, Hawaii. Nov. 2019. 
+							<!-- <p>[ <a>Download</a> ]</p></li> -->
+							<li>Poster. "Post-Design Methodology for Constant Power Load WPT Systems". Center for Electromagnetic Compatibility (CEMC) IAB Meeting. Honolulu, Hawaii. Nov. 2019. 
+							<!-- <p>[ <a>Download</a> ]</p></li> -->
+							<li>Poster. "Accurate Modeling of PMIC Devices to Optimize Low Frequency Voltage Droop". Center for Electromagnetic Compatibility (CEMC) IAB Meeting. Honolulu, Hawaii. Nov. 2019. 
+							<!-- <p>[ <a>Download</a> ]</p></li> -->
+							<li>Poster. "Designing a 40GHz Automated Channel Emulator Based on MEMS Switch". Center for Electromagnetic Compatibility (CEMC) IAB Meeting. Rolla, Missouri. Nov. 2014. 
+							<!-- <p>[ <a>Download</a> ]</p></li> -->
+						</ul>
+					</div> <!-- container-text -->
 				</div> <!-- container-description -->
 			</div> <!-- container-block -->
 
 			<div class="container-block">
 				<h1>Mathematical Modeling</h1>
-				<div class="container-description">
-					<span id="research-photo">
-						<img src="./bootstrap/img/math-model-solar-house.jpg">
-					</span>
-					<div id="research-text" class="container-text">
-						<div>
-							<h3>Optimal Design for Solar House</h3>
-							<p><b>Objectives:</b><br> A mathematical model aims to solve the problem in balancing the profit and usage of solar energy.</p>
-							<p><b>Keywords:</b><br> Multi-objective programming, BL layout strategy, Packing problem, Best tilt angle</p> 
-							<p><b>Members:</b><br> Yanyu Yang, Undergraduate, School of Mathematics and Statistics, HUST<br>Wei Li,  Undergraduate, School of Mathematics and Statistics, HUST</p>
-							<p><b>Awards:</b><br> National Prize of CUMCM, China<br>CUMCM - Contemporary Undergraduate Mathematical Contest in Modeling</p>
-						</div>
-						<!-- <div> -->
-						<!-- <p>[ <a>More Information</a> ]</p> -->
-						<!-- </div> -->
+				<div class="container-description research-block">
+					<div class="container-text research-photo">
+						<span><img src="./bootstrap/img/math-model-solar-house.jpg"></span>
+					</div>
+					<div class="container-text research-text">
+						<h3>Optimal Design for Solar House</h3>
+						<p><b>Objectives:</b><br> A mathematical model to solve the problem in balancing the profit and usage of solar energy.</p>
+						<p><b>Keywords:</b><br> Multi-objective programming, BL layout strategy, packing problem</p> 
+						<p><b>Teammates:</b><br> Yanyu Yang, School of Mathematics and Statistics, HUST<br>Wei Li,  School of Mathematics and Statistics, HUST</p>
+						<p><b>Awards:</b><br> National Prize of CUMCM, China<br>Contemporary Undergraduate Mathematical Contest in Modeling</p>
 					</div>
 				</div> <!-- container-description -->
 			</div> <!-- container-block -->
@@ -240,89 +272,118 @@
 	<script id="projects-content" type="text/x-content">
 		<div class="container-outside">
 			<div class="container-block">
-				<h1>Google Inc. (Mountain View, United States)</h1>
+				<h1>Tesla Inc.</h1>
 				<div class="container-description">
-					<h3>Hardware Intern, Phone SIPI Group, Jan. 2019 ~ July. 2019</h3>
-					<ul>
-						<li>
-							<b>End-to-end Power Distribution Network (PDN) Modeling for Mobile Platforms</b>
-							<p><i>Project & Technical Lead</i><br>Developed a novel pattern-based analytical method for PCB PDN impedance calculation. Built an accurate PMIC model to optimize the PDN low frequency response.</p>
-						</li>
-						<li>
-							<b>Debugging on the USB Charging Desense Issue</b>
-							<p><i>Core Member</i><br>Used near-field scanning to identify the radiation source at charging port. Proposed solutions to mitigate the desense issue.</p>
-						</li>
-					</ul>
+					<div class="container-text">
+						<h3>Sr. Electronic Design Engineer, Autopilot SIPI Group, June. 2020 ~ Present</h3>
+						<ul>
+							<li>
+								<b>End-to-end Power Distribution Network (PDN) Modeling for Mobile Platforms</b>
+								<p><i>Project & Technical Lead</i><br>Developed a novel pattern-based analytical method for PCB PDN impedance calculation. Built an accurate PMIC model to optimize the PDN low frequency response.</p>
+							</li>
+							<li>
+								<b>Debugging on the USB Charging Desense Issue</b>
+								<p><i>Core Member</i><br>Used near-field scanning to identify the radiation source at charging port. Proposed solutions to mitigate the desense issue.</p>
+							</li>
+						</ul>
+					</div> <!-- container-text -->
 				</div> <!-- container-description -->
 			</div> <!-- container-block -->
 
 			<div class="container-block">
-				<h1>ConvenientPower Systems (Chengdu, China)</h1>
+				<h1>Google LLC</h1>
 				<div class="container-description">
-					<h3>Manager, RX System Group, Apr. 2017 ~ Aug. 2018</h3>
-					<ul>
-						<li>
-							<b>CPS Wireless Charging Case for Meizu POP TWS Earphones</b>
-							<p><i>Project & Technical Lead</i><br>World's first earphones product certified by WPC Qi standard. We integrated the wireless power receiver solution with the most compact magnetic coil design for tiny form-factor device.</p>
-						</li>
-						<li>
-							<b>CPS Wireless Charging Function Integration for Gionee M7P Phone</b>
-							<p><i>Project & Technical Lead</i><br>In-depth integration of wireless charging function on mechanical structure, hardware, driver and manufacturing test setup. We launched the first 10W fast wireless charging phone in China.</p>
-						</li>
-					</ul>
+					<div class="container-text">
+						<h3>Hardware Intern, Phone SIPI Group, Jan. 2019 ~ July. 2019</h3>
+						<ul>
+							<li>
+								<b>End-to-end Power Distribution Network (PDN) Modeling for Mobile Platforms</b>
+								<p><i>Project & Technical Lead</i><br>Developed a novel pattern-based analytical method for PCB PDN impedance calculation. Built an accurate PMIC model to optimize the PDN low frequency response.</p>
+							</li>
+							<li>
+								<b>Debugging on the USB Charging Desense Issue</b>
+								<p><i>Core Member</i><br>Used near-field scanning to identify the radiation source at charging port. Proposed solutions to mitigate the desense issue.</p>
+							</li>
+						</ul>
+					</div> <!-- container-text -->
 				</div> <!-- container-description -->
 			</div> <!-- container-block -->
 
 			<div class="container-block">
-				<h1>H3C Technologies Co., Ltd. (Wuhan, China)</h1>
+				<h1>E-Charging Inc.</h1>
 				<div class="container-description">
-					<h3>Software Engineer, May. 2011 ~ Jan. 2013</h3>
-					<ul>
-						<li>
-							<b>H3C PPPoE Server Development Project</b>
-							<p><i>Technical Lead</i><br>Implement the PPP protocol over the local Ethernet on the H3C Comware V7 distributed platform, including kernel architecture and user space application design.</p>
-						</li>
-						<li>
-							<b>H3C Network Quality Analyzer Development Project</b>
-							<p><i>Core Member</i><br>Using probes and traces to collect statistical and historical information for the routers connected to the Internet, and analyze the network quality based on multiple network protocols.</p>
-						</li>	    
-					</ul>
+					<p>* now named ConvenientPower Systems</p>
+					<div class="container-text">
+						<h3>Manager, RX System Group, Apr. 2017 ~ Aug. 2018</h3>
+						<ul>
+							<li>
+								<b>CPS Wireless Charging Case for Meizu POP TWS Earphones</b>
+								<p><i>Project & Technical Lead</i><br>World's first earphones product certified by WPC Qi standard. We integrated the wireless power receiver solution with the most compact magnetic coil design for tiny form-factor device.</p>
+							</li>
+							<li>
+								<b>CPS Wireless Charging Function Integration for Gionee M7P Phone</b>
+								<p><i>Project & Technical Lead</i><br>In-depth integration of wireless charging function on mechanical structure, hardware, driver and manufacturing test setup. We launched the first 10W fast wireless charging phone in China.</p>
+							</li>
+						</ul>
+					</div> <!-- container-text -->
 				</div> <!-- container-description -->
 			</div> <!-- container-block -->
 
 			<div class="container-block">
-				<h1>Research Projects (Missouri S&T & HUST)</h1>
+				<h1>H3C Technologies</h1>
 				<div class="container-description">
-					<ul>
-						<li>
-							<b>Modeling on Wireless Power Transfer (WPT) Systems</b>
-							<p>Developed accurate rectifier characterization method and improved system-level model.<br>Proposed pre-design and post-design methodology to optimize coils and system.</p>
-						</li>	    
-						<li>
-							<b>Resonance Wireless Power System for Multiple Receiver Devices</b>
-							<p><i>Prototype demo in the CES, Las Vegas, 2016.</i><br>Implemented both hardware and software of a WPT system based on A4WP standard.<br>Capable of charging two phones simultaneously with adaptive efficiency optimization control.</p>
-						</li>
-						<li>
-							<b>Simulation of HPM / ESD Effects on Semiconductor Device</b>
-							<p>Analyzed the device physics of failures caused by HPM / ESD injections.<br>Predicted the upset events in a particle-level perspective based on Monte Carlo method.</p>
-						</li>
-						<li>
-							<b>Automated Channel Emulator Based on MEMS Switch</b>
-							<p>Designed multiple high-frequency transmission line channels with different loss levels.<br>Integrated MEMS switch for channel selection by an embedded system running Python.</p>
-						</li>
-						<li>
-							<b>Wireless Smoke Detection Based on Structure Similarity of Video</b>
-							<p>Designed the smoke detection algorithm using structure similarity of video frames.<br>Completed the hardware and software of the WiFi-UART module to transmit smoke alarm.</p>
-						</li>
-						<li>
-							<b>Optimal Bandwidth Allocation Algorithm for VoD Streaming</b>
-							<p>Developed an optimal bandwidth allocation topology for hybrid VoD streaming.<br>Novel <i>Demand Driven Max-Flow</i> formulation and distributed <i>Free-for-All Push-Lift</i> algorithm.</p>
-						</li>
-						<li>
-							<b>Heat Sink / IC Radiation Field Transformation</b>
-							<p>Constructed an equivalent field source by the near-field scanning technique.<br>Developed and validated a far-field transformation procedure for the heat sink / IC structure.</p>
-						</li>
-					</ul>
+					<div class="container-text">
+						<h3>Software Engineer, May. 2011 ~ Jan. 2013</h3>
+						<ul>
+							<li>
+								<b>H3C PPPoE Server Development Project</b>
+								<p><i>Technical Lead</i><br>Implement the PPP protocol over the local Ethernet on the H3C Comware V7 distributed platform, including kernel architecture and user space application design.</p>
+							</li>
+							<li>
+								<b>H3C Network Quality Analyzer Development Project</b>
+								<p><i>Core Member</i><br>Using probes and traces to collect statistical and historical information for the routers connected to the Internet, and analyze the network quality based on multiple network protocols.</p>
+							</li>	    
+						</ul>
+					</div> <!-- container-text -->
+				</div> <!-- container-description -->
+			</div> <!-- container-block -->
+
+			<div class="container-block">
+				<h1>Research Projects</h1>
+				<div class="container-description">
+					<div class="container-text">
+						<h3>Graduate Research Assistant, Aug. 2014 ~ June. 2020</h3>
+						<ul>
+							<li>
+								<b>Modeling on Wireless Power Transfer (WPT) Systems</b>
+								<p>Developed accurate rectifier characterization method and improved system-level model.<br>Proposed pre-design and post-design methodology to optimize coils and system.</p>
+							</li>	    
+							<li>
+								<b>Resonance Wireless Power System for Multiple Receiver Devices</b>
+								<p><i>Prototype demo in the CES, Las Vegas, 2016.</i><br>Implemented both hardware and software of a WPT system based on A4WP standard.<br>Capable of charging two phones simultaneously with adaptive efficiency optimization control.</p>
+							</li>
+							<li>
+								<b>Simulation of HPM / ESD Effects on Semiconductor Device</b>
+								<p>Analyzed the device physics of failures caused by HPM / ESD injections.<br>Predicted the upset events in a particle-level perspective based on Monte Carlo method.</p>
+							</li>
+							<li>
+								<b>Automated Channel Emulator Based on MEMS Switch</b>
+								<p>Designed multiple high-frequency transmission line channels with different loss levels.<br>Integrated MEMS switch for channel selection by an embedded system running Python.</p>
+							</li>
+							<li>
+								<b>Wireless Smoke Detection Based on Structure Similarity of Video</b>
+								<p>Designed the smoke detection algorithm using structure similarity of video frames.<br>Completed the hardware and software of the WiFi-UART module to transmit smoke alarm.</p>
+							</li>
+							<li>
+								<b>Optimal Bandwidth Allocation Algorithm for VoD Streaming</b>
+								<p>Developed an optimal bandwidth allocation topology for hybrid VoD streaming.<br>Novel <i>Demand Driven Max-Flow</i> formulation and distributed <i>Free-for-All Push-Lift</i> algorithm.</p>
+							</li>
+							<li>
+								<b>Heat Sink / IC Radiation Field Transformation</b>
+								<p>Constructed an equivalent field source by the near-field scanning technique.<br>Developed and validated a far-field transformation procedure for the heat sink / IC structure.</p>
+							</li>
+						</ul>
+					</div> <!-- container-text -->
 				</div> <!-- container-description -->
 			</div> <!-- container-block -->
 
@@ -330,41 +391,44 @@
 				<h1>Open-Source Projects</h1>
 				<div class="container-description">
 					<!-- content of open source projects -->
-					<div class="opensource-projects">
-						<h3>HUST Open-Source Mirror Site</h3>
-						<div class="opensource-screenshots">
-							<img src="./bootstrap/img/hust-mirror-site.jpg">
+					<div class="container-text">
+						<div class="container-desc-col-2">
+							<h3>HUST Open-Source Mirror Site</h3>
+							<div class="opensource-screenshots">
+								<span><img src="./bootstrap/img/hust-mirror-site.jpg"></span>
+							</div>
+							<p>First & largest open-source mirror site in Central China</p>
+							<p><a href="http://mirror.hust.edu.cn" target="_blank">Click to Visit</a> this mirror site</p>
 						</div>
-						<p>The first and largest open-source mirror site in Central China.</p>
-						<p><a href="http://mirror.hust.edu.cn" target="_blank">Click to Visit</a> this mirror site</p>
+
+						<div class="container-desc-col-2">
+							<h3>Wireless Charging System Model</h3>
+							<div class="opensource-screenshots">
+								<span><img src="./bootstrap/img/wpt-system-model.jpg"></span>
+							</div>
+							<p>A novel model to design and optimize WPT system</p>
+							<p>To be released, stay tuned!</p>
+						</div>
+
+						<div class="container-desc-col-2">
+							<h3>Rage Adventure Web Game</h3>
+							<div class="opensource-screenshots">
+								<span><img src="./bootstrap/img/rage-adventure.jpg"></span>
+							</div>
+							<p>A Processing.js based web game engine demo</p>
+							<p><a href="./RageAdventureWeb/index.html">Click to Play</a> (recommend using Chrome).</p>
+						</div>
+
+						<div class="container-desc-col-2">
+							<h3>File Search Engine</h3>
+							<div class="opensource-screenshots">
+								<span><img src="./bootstrap/img/search-engine.jpg"></span>
+							</div>
+							<p>Perl implementation of local file-system searching</p>
+							<p><a href="https://github.com/noalac/LocalSearchEngine" target="_blank">Visit my Github</a> for source codes of my projects</p>
+						</div>
 					</div>
 
-					<div class="opensource-projects">
-						<h3>Wireless Charging System Model</h3>
-						<div class="opensource-screenshots">
-							<img src="./bootstrap/img/wpt-system-model.jpg">
-						</div>
-						<p>A novel model to design and optimize WPT system.</p>
-						<p>To be released, stay tuned!</p>
-					</div>
-
-					<div class="opensource-projects">
-						<h3>Rage Adventure Web Game</h3>
-						<div class="opensource-screenshots">
-							<img src="./bootstrap/img/rage-adventure.jpg">
-						</div>
-						<p>A Processing.js based web game engine demo.</p>
-						<p><a href="./RageAdventureWeb/index.html">Click to Play</a> (recommend using Chrome).</p>
-					</div>
-
-					<div class="opensource-projects">
-						<h3>File Search Engine</h3>
-						<div class="opensource-screenshots">
-							<img src="./bootstrap/img/search-engine.jpg">
-						</div>
-						<p>Perl implementation of local file-system searching.</p>
-						<p><a href="https://github.com/noalac/LocalSearchEngine" target="_blank">Visit my Github</a> for source codes of my projects.</p>
-					</div>
 				</div> <!-- container-description -->
 			</div> <!-- container-block -->
 		</div> <!-- container-outside -->
@@ -374,11 +438,11 @@
 	<script id="about-content" type="text/x-content">
 		<div class="container-outside">
 			<div class="container-block">
-          <h1>About Me</h1>
+				<h1>About Me</h1>
 				<div class="container-description">
-					<span id="about-me-photo">
-						<img src="./bootstrap/img/about-me.jpg">
-					</span>
+					<div id="about-me-photo" class="container-text">
+						<span><img src="./bootstrap/img/about-me.jpg"></span>
+					</div>
 					<div id="about-me-text" class="container-text">
 						<div>
 							<p>Jingdong Sun received his B.S. degree (Honors Program) in electronic information and communications from the <a href="http://english.hust.edu.cn" target="_blank">Huazhong University of Science and Technology</a>, Wuhan, China in 2014, and the M.S. and Ph.D degrees in electrical engineering from the <a href="https://www.mst.edu" target="_blank">Missouri University of Science and Technology</a>, Rolla, USA in 2016 and 2020, respectively. He joined Tesla Inc., Palo Alto, CA as a Sr. Electronic Design Engineer since June 2020. His research interests include system modeling for wireless power transfer and signal/power integrity applications. </p>
@@ -391,88 +455,87 @@
 							<p><i>Measurement:</i> Oscilloscope, VNA, SA, TDR, near-field scanning, micro-probing</p>
 							<p><i>Simulation:</i> full-wave (HFSS, CST, EMC Studio), circuit (ADS, HSPICE, PowerSI)</p>
 						</div>
-					</div>
+					</div> <!-- container-text -->
 				</div> <!-- container-description -->
 			</div> <!-- container-block -->
 
-			<div id="honor-award" class="container-block">
+			<div class="container-block">
 				<h1>Honors and Awards</h1>
-				<div class="container-description-reverse">
-					<span>
-						<a href="https://emclab.mst.edu" target="_blank">
-							<img src="./bootstrap/img/emc-lab-logo.png">
-						</a>
-					</span>
-					<div>
+				<div class="container-description">
+					<div class="container-text container-desc-col-1">
 						<h3>EMC Lab, Missouri S&T</h3>
-						<ul>
-							<li>
-								Best Student EMC Hardware Design Award</I>, 2015<br>
-								First Author, granted by IEEE Electromagnetic Compatibility Society
-							</li>
-							<li>
-								Exceptional Performance in International EM Proficiency Test, 2014<br>
-								Executed by National Taiwan University & TEMIAC <br>
-								Top 4% among 265 exam takers from Japan, HK, Korea, Taiwan, and US.
-							</li>
-							<li>
-								Graduate Research Assistant Scholarship, 2014<br>
-								Full research scholarship granted by EMC Laboratory, Missouri S&T
-							</li>
-						</ul>
-					</div>
-				</div> <!-- container-description-reverse -->
+						<div class="software-text">
+							<ul>
+								<li>
+									<p>Best Student EMC Hardware Design Award</I>, 2015</p>
+									<p>First Author, granted by IEEE Electromagnetic Compatibility Society</p>
+								</li>
+								<li>
+									<p>Exceptional Performance in International EM Proficiency Test, 2014</p>
+									<p>Executed by National Taiwan University & TEMIAC</p>
+									<p>Top 4% among 265 exam takers from Japan, HK, Korea, Taiwan, and US</p>
+								</li>
+								<li>
+									<p>Graduate Research Assistant Scholarship, 2014</p>
+									<p>Full research scholarship granted by EMC Laboratory, Missouri S&T</p>
+								</li>
+							</ul>
+						</div>
+						<div class="software-photo">
+							<span><img src="./bootstrap/img/emc-lab-logo.png"></span>
+						</div>
+					</div> <!-- container-text -->
+				</div> <!-- container-description -->
 			
-				<div class="container-description-reverse">
-					<span>
-						<a href="http://qiming.hust.edu.cn/" target="_blank">
-							<img src="./bootstrap/img/eiac-logo.jpg">
-						</a>
-					</span>
-					<div>
+				<div class="container-description">
+					<div class="container-text container-desc-col-1">
 						<h3>Advanced Class (Honors Program), HUST</h3>
-						<ul>
-							<li>
-								National Prize in Mathematical Contest CUMCM, 2012<br>
-								Contemporary Undergraduate Mathematical Contest in Modeling <br>
-								Top 5% among all the competitors in China, Singapore, and US.
-							</li>
-							<li>
-								National Computer Rank Examination Certificate (Grade 4, Network Engineer), 2011
-							</li>
-							<li>
-								National Utility Model Patent, 2009
-							</li>
-							<li>
-								Tennis of Hubei University Sports Competition: 6th in men's single / 3rd in men's group
-							</li>
-							<li>
-								Occupational Qualification Certificate of Tennis (Fifth Level)
-							</li>
-						</ul>
-					</div>
-				</div> <!-- container-description-reverse -->
-			
-				<div class="container-description-reverse">
-					<span>
-						<a href="http://www.dian.org.cn/" target="_blank">
-							<img src="./bootstrap/img/dian-logo.png">
-						</a>
-					</span>
-					<div>
-						<h3>Dian Group, HUST</h3>
-						<ul>
-							<li>
-								Most Valuable Member of the Year, 2012 (one person each year)
-							</li>
-							<li>
-								Won TechStar Honor twice (in 08/2012 and 12/2012 respectively)
-							</li>
-						</ul>
-					</div>
-				</div> <!-- container-description-reverse -->
+						<div class="software-text">
+							<ul>
+								<li>
+									<p>National Prize in Mathematical Contest CUMCM, 2012</p>
+									<p>Top 5% among all the competitors in China, Singapore, and US</p>
+								</li>
+								<li>
+									<p>National Computer Rank Examination Certificate (Network Engineer), 2011</p>
+								</li>
+								<li>
+									<p>National Utility Model Patent, 2009</p>
+								</li>
+								<li>
+									<p>Hubei University Sports Competition (Tennis):</p>
+									<p>6<sup>th</sup> in men's single / 3<sup>rd</sup> in men's group</p>
+								</li>
+								<li>
+									<p>Occupational Qualification Certificate of Tennis (5<sup>th</sup> Level)</p>
+								</li>
+							</ul>
+						</div>
+						<div class="software-photo">
+							<span><img src="./bootstrap/img/eiac-logo.jpg"></span>
+						</div>
+					</div> <!-- container-text -->
+				</div> <!-- container-description -->
 
-				<div style="height:20px;"></div> <!-- only to add a little space at bottom -->
+				<div class="container-description">
+					<div class="container-text container-desc-col-1">
+						<h3>Dian Group, HUST</h3>
+						<div class="software-text">
+							<ul>
+								<li>
+									<p>Most Valuable Member of the Year, 2012 (one person each year)</p>
+								</li>
+								<li>
+									<p>Won TechStar Honor twice (in 08/2012 and 12/2012 respectively)</p>
+								</li>
+							</ul>
+						</div>
+						<div class="software-photo">
+							<span><img src="./bootstrap/img/dian-logo.png"></span>
+						</div>
+					</div> <!-- container-text -->
+				</div> <!-- container-description -->
+
 			</div> <!-- container-block -->
 		</div> <!-- container-outside -->
 	</script>
@@ -483,10 +546,10 @@
 			<div class="container-block">
 				<h1>Contact</h1>
 				<div class="container-description">
-					<span id="contact-photo">
-						<img src="./bootstrap/img/contact.jpg">
-					</span>
-					<div class="container-text">
+					<div id="contact-photo" class="container-text">
+						<span><img src="./bootstrap/img/contact.jpg"></span>
+					</div>
+					<div id="contact-text" class="container-text">
 						<h3>Address</h3>
 						<div>
 							<p>3500 Deer Creek Road</p>
@@ -505,7 +568,7 @@
 							</li>
 						</ul>
 						<div id="qr-code">
-							<img src="./bootstrap/img/qrcode.jpg">
+							<span><img src="./bootstrap/img/qrcode.jpg"></span>
 						</div>
 					</div>
 				</div> <!-- container-description -->
@@ -514,12 +577,12 @@
 			<div class="container-block">
 				<h1>Map</h1>
 				<div class="container-description">
-					<div id="my-map" style="width:100%;height:400px;"></div>
+					<div id="my-map" class="container-text"></div>
 					<script>
 						/* we use mapbox to provide map information */
 						var mymap = L.map('my-map').setView([37.394475, -122.149824], 15);
 				L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-                attribution: '© <a href="https://www.mapbox.com/about/maps/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> <strong><a href="https://www.mapbox.com/map-feedback/" target="_blank">Improve this map</a></strong>',
+                attribution: '© <a href="https://www.mapbox.com/about/maps/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
                 tileSize: 512,
 				maxZoom: 18,
                 zoomOffset: -1,
@@ -544,18 +607,13 @@
 	<script src="./bootstrap/js/backtop.js"></script>
 	<!-- change gallery photo and description when click on arrows -->
 	<script>
-		var gallery_photo_titles = new Array(
-			"Welcome to My Homepage",
-			"Best Student Hardware Design Award",
-			"Presentation in CEMC IAB Meeting",
-			"World's First Qi-Certified Wireless Charging Earphones",
-		);
 		var gallery_photo_descriptions = new Array(
-			"Here is a collection of my work, including the research and projects",
-			"Granted by IEEE EMC Society in 2015 IEEE EMC Symposium, Santa Clara, CA",
-			"Introducing the modeling method for power distribution network, Hawaii",
-			"Integrated the wireless charging solution for Meizu POP TWS Earpods",
+			"Welcome to My Homepage",
+			"IEEE Best Hardware Design Award",
+			"Presentation in CEMC IAB Meeting",
+			"World's First Qi-Certified Earphones",
 		);
+		var gallery_photo_titles = gallery_photo_descriptions; /* legacy */
 		/* set up a timer to change gallery photo in time */
 		var timer = window.setInterval("changePhotoRight()", 8000);
 	</script>
@@ -565,8 +623,8 @@
 	<!-- footer shows my motto -->
 	<div id="bottom-banner" class="banner">
 		<div id="motto" class="wrapper">
-			<p>Excellence is a habit. Details make a difference.</p>
-			<p>Good attitude will lead to more opportunities.</p>
+			<p>Excellence is habit. Detail makes difference.</p>
+			<p>Good attitude leads to more opportunities.</p>
 		</div>
 	</div>
 </body>
@@ -574,7 +632,7 @@
 <!--[if lte IE 8]>
 <div id="warning">
 <p class="wrapper">*Detecting the current browser version is Microsoft Internet Explorer 8 (IE8) or below (IE7 IE6 etc.).</p>
-<p class="wrapper">**It is highly recommended to use Chrome / Firefox / IE9 to gain the best animation experience of my portfolio website.</p>
+<p class="wrapper">**It is highly recommended to use Chrome / Firefox / IE9 to gain the best experience of this website.</p>
 </div>
 <![endif]-->
 </html>
