@@ -434,7 +434,7 @@ uu {
     margin-bottom: 10px;
 }
 .container-text h3 {
-    margin-top:0;
+    margin-top:10px;
     margin-bottom:10px;
 }
 .container-text p {
@@ -491,6 +491,9 @@ uu {
     padding-left:0;
     margin-bottom:18px;
 }
+#contact li {
+    margin-bottom: 0;
+}
 #contact li a {
     text-decoration:none;
     color:#000;
@@ -533,14 +536,17 @@ uu {
     transition:color .5s;
 }
 
-.research-photo {
+#math-model-photo {
     width:36%;
     overflow:hidden;
     margin-right: 2%;
     margin-bottom: 10px;
 }
-.research-text {
+#math-model-text {
     width:60%;
+}
+#math-model-text p {
+    margin-bottom: 10px;
 }
 
 
@@ -580,7 +586,6 @@ uu {
     width: 96%;
 }
 .opensource-screenshots span img {
-    margin-top:2%;
-    margin-left:10%;
-    width: 80%;
+    margin: 5% 5% 3% 5%;
+    width: 90%;
 }
