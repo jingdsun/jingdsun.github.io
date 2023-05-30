@@ -1,19 +1,10 @@
 #gallery-text {
     filter: Alpha(opacity=80); /* IE6/IE7/8 */
 }
-
-#arrows-left {
+.gallery-arrow {
     filter: Alpha(opacity=50); /* IE6/IE7/8 */
 }
-
-#arrows-right {
-    filter: Alpha(opacity=50); /* IE6/IE7/8 */
-}
-
-#arrows-left:hover {
-    filter: Alpha(opacity=99); /* IE6/IE7/8 */
-}
-#arrows-right:hover {
+.gallery-arrow:hover {
     filter: Alpha(opacity=99); /* IE6/IE7/8 */
 }
 

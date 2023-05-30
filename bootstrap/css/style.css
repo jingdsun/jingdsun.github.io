@@ -156,6 +156,8 @@ uu {
     color:#CCC;
     background: #232323;
     appearance:none;
+    cursor: pointer;
+
     -webkit-appearance:none;
     -moz-appearance:none;
     -ms-appearance:none;
@@ -259,7 +261,7 @@ uu {
     height: 5vw;
     max-height: 70px;
     background-color:#EEE2DC;
-    opacity:0.85;
+    opacity:0.8;
     z-index:2;
     text-align:center;
     align-items: center;
