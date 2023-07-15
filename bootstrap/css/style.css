@@ -531,7 +531,8 @@ uu {
     padding-left:24px;
 }
 #mail:hover {
-    color:#b50000;
+    /*color:#b50000;*/
+    color:#2596be;
     -webkit-transition:color .5s;
     -moz-transition:color .5s;
     -o-transition:color .5s;
